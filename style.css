@@ -24,3 +24,28 @@ button:hover{background:#d62828;}
   transform: scale(1.05);
   box-shadow: 0 0 20px rgba(244,180,0,0.6);
 }
+/* --- HERO (Homepage) --- */
+.hero-inner{
+  display:flex;
+  gap:2rem;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+.hero-copy{
+  flex: 1 1 360px;
+}
+
+.hero-logo{
+  flex: 0 1 420px;
+  text-align:center;
+}
+
+.hero-logo img{
+  width:100%;
+  max-width:420px;
+  height:auto;
+  display:block;
+  margin:0 auto;
+}
