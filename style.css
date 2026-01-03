@@ -99,7 +99,7 @@ header h1 {
   text-shadow:
     3px 3px 0 #000,
     6px 6px 0 #d62828,
-    9px 9px 0 #1a8e3e;
+    7px 7px 0 #1a8e3e;
 }
 
 header nav a {
@@ -114,7 +114,7 @@ header nav a:hover {
 }
 
 header h1 {
-  animation: glow 3s ease-in-out infinite alternate;
+  animation: glow 4.5s ease-in-out infinite alternate;
 }
 
 @keyframes glow {
