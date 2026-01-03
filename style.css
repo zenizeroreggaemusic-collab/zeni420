@@ -86,3 +86,29 @@ header nav a {
   letter-spacing: 1.5px;
   font-size: 1.1rem;
 }
+
+/* === HEADER VISIBILITY BOOST === */
+header {
+  padding: 2.5rem 1rem;
+}
+
+header h1 {
+  font-family: 'Rubik Spray Paint', cursive;
+  font-size: 3.4rem;
+  color: #ffd84d; /* brighter gold */
+  text-shadow:
+    3px 3px 0 #000,
+    6px 6px 0 #d62828,
+    9px 9px 0 #1a8e3e;
+}
+
+header nav a {
+  font-family: 'Rubik Spray Paint', cursive;
+  color: #ffd84d;
+  text-shadow: 2px 2px 0 #000;
+}
+
+header nav a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 216, 77, 0.9);
+}
