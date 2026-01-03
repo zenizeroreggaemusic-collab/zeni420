@@ -7,7 +7,14 @@ header{text-align:center;padding:2rem;background:linear-gradient(to right,#d6282
 nav{text-align:center;background-color:rgba(0,0,0,0.8);padding:0.75rem;}
 nav a{color:#f7cd46;margin:0 1rem;text-decoration:none;font-weight:bold;}
 nav a:hover{color:#1a8e3e;}
-main{background-color:rgba(0,0,0,0.7);padding:2rem;border:4px solid #d62828;max-width:900px;margin:2rem auto;border-radius:10px;}
+main {
+  background-color: rgba(0,0,0,0.7);
+  padding: 2rem;
+  max-width: 900px;
+  width: 100%;
+  margin: 2rem auto;
+  border-radius: 10px;
+}
 h1,h2,h3{text-align:center;color:#f7cd46;}
 footer{text-align:center;background:rgba(0,0,0,0.8);padding:1rem;color:#f7cd46;}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;}
@@ -52,4 +59,12 @@ button:hover{background:#d62828;}
   display: block;
   margin: 0 auto;
   filter: drop-shadow(0 0 18px rgba(244,180,0,0.6));
+}
+
+/* About page text wrapping fix */
+main p {
+  line-height: 1.6;
+  overflow-wrap: break-word;
+  word-break: normal;
+  text-align: left;
 }
