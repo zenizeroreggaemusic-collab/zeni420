@@ -112,3 +112,16 @@ header nav a:hover {
   color: #ffffff;
   text-shadow: 0 0 10px rgba(255, 216, 77, 0.9);
 }
+
+header h1 {
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 3px 3px 0 #000, 6px 6px 0 #d62828; }
+  to   { text-shadow: 3px 3px 0 #000, 8px 8px 12px #fdb84d; }
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
