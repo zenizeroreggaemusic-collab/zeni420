@@ -68,3 +68,21 @@ main p {
   word-break: normal;
   text-align: left;
 }
+
+/* ===== GRAFFITI FONT (HEADER + NAV) ===== */
+
+header h1 {
+  font-family: 'Rubik Spray Paint', cursive;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  color: #f7cd46;
+  text-shadow:
+    2px 2px 0 #d62828,
+    4px 4px 0 #1a8e3e;
+}
+
+header nav a {
+  font-family: 'Rubik Spray Paint', cursive;
+  letter-spacing: 1.5px;
+  font-size: 1.1rem;
+}
