@@ -82,9 +82,15 @@ header h1 {
 }
 
 header nav a {
-  font-family: 'Rubik Spray Paint', cursive;
-  letter-spacing: 1.5px;
-  font-size: 1.1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffd84d;
+
+  /* remove the “blobby” glow */
+  text-shadow: 1px 1px 0 #000;
 }
 
 /* === HEADER VISIBILITY BOOST === */
