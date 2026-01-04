@@ -136,3 +136,42 @@ header h1 {
 header nav a:hover {
   text-decoration: underline;
 }
+
+/* =========================
+   HERO LOGO STYLING
+   ========================= */
+
+.hero-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.hero-logo img {
+  max-width: 420px;   /* desktop size */
+  width: 100%;
+  height: auto;
+
+  /* subtle reggae glow */
+  filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.35))
+          drop-shadow(0 0 22px rgba(0, 150, 0, 0.25));
+
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* hover effect (desktop only) */
+.hero-logo img:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 0 18px rgba(255, 215, 0, 0.5))
+          drop-shadow(0 0 28px rgba(0, 150, 0, 0.4));
+}
+
+/* =========================
+   MOBILE OPTIMIZATION
+   ========================= */
+@media (max-width: 768px) {
+  .hero-logo img {
+    max-width: 300px;
+  }
+}
