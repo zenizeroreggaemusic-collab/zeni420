@@ -102,16 +102,29 @@ header h1 {
   font-family: 'Rubik Spray Paint', cursive;
   font-size: 3.2rem;
   color: #ffd84d;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 
-  /* cleaner outline */
+  /* CLEAN, READABLE OUTLINE */
   text-shadow:
     1px 1px 0 #000,
     2px 2px 0 #000,
     3px 3px 0 #1a8e3e;
 }
 
+header nav a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
 
+  color: #ffd84d;
+
+  /* clean readable outline */
+  text-shadow:
+    1px 1px 0 #000,
+    2px 2px 0 #000;
+}
 
 header nav a:hover {
   color: #ffffff;
