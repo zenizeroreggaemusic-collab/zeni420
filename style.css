@@ -70,16 +70,21 @@ main p {
 }
 
 /* ===== GRAFFITI FONT (HEADER + NAV) ===== */
-
+/* ===== TITLE (Option A) ===== */
 header h1 {
   font-family: 'Rubik Spray Paint', cursive;
-  font-size: 3rem;
-  letter-spacing: 2px;
-  color: #f7cd46;
+  font-size: 3.4rem;
+  letter-spacing: 0.5px;
+  color: #ffd84d;
+
+  /* strong readable outline */
   text-shadow:
-    2px 2px 0 #d62828,
-    4px 4px 0 #1a8e3e;
-}
+  -2px -2px 0 #000,
+   2px -2px 0 #000,
+  -2px  2px 0 #000,
+   2px  2px 0 #000,
+   0px 3px 0 #000,
+   0px 6px 6px rgba(0,0,0,0.35);
 
 header nav a {
   font-family: 'Montserrat', sans-serif;
@@ -98,33 +103,6 @@ header {
   padding: 2.5rem 1rem;
 }
 
-header h1 {
-  font-family: 'Rubik Spray Paint', cursive;
-  font-size: 3.2rem;
-  color: #ffd84d;
-  letter-spacing: 2px;
-
-  /* CLEAN, READABLE OUTLINE */
-  text-shadow:
-    1px 1px 0 #000,
-    2px 2px 0 #000,
-    3px 3px 0 #1a8e3e;
-}
-
-header nav a {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
-  font-size: 1rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-
-  color: #ffd84d;
-
-  /* clean readable outline */
-  text-shadow:
-    1px 1px 0 #000,
-    2px 2px 0 #000;
-}
 
 header nav a:hover {
   color: #ffffff;
@@ -133,18 +111,6 @@ header nav a:hover {
     1px 1px 0 #ffd84d;
 }
 
-header h1 {
-  animation: glow 4.5s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-  from { text-shadow: 3px 3px 0 #000, 6px 6px 0 #d62828; }
-  to   { text-shadow: 3px 3px 0 #000, 8px 8px 12px #fdb84d; }
-}
-
-header nav a:hover {
-  text-decoration: underline;
-}
 
 /* =========================
    HERO LOGO STYLING
