@@ -111,17 +111,7 @@ header h1 {
     3px 3px 0 #1a8e3e;
 }
 
-header nav a {
-  font-family: 'Rubik Spray Paint', cursive;
-  font-size: 1.1rem;
-  letter-spacing: 1px;
-  font-weight: 600;
-  color: #ffd84d;
 
-  /* sharp outline, no blur */
-  text-shadow:
-    1px 1px 0 #000;
-}
 
 header nav a:hover {
   color: #ffffff;
