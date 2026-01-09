@@ -1,17 +1,101 @@
+/* =========================================================
+   ZENIZERO - Global Styles (Clean + Stable)
+   ========================================================= */
 
-body {margin:0;font-family:'Segoe UI',sans-serif;background:#000;color:#fff;}
-header{text-align:center;padding:2rem;background:linear-gradient(to right,#d62828,#f7cd46,#1a8e3e);}
-nav{text-align:center;background-color:rgba(0,0,0,0.8);padding:0.75rem;}
-nav a{color:#f7cd46;margin:0 1rem;text-decoration:none;font-weight:bold;}
-nav a:hover{color:#1a8e3e;}
-main{background-color:rgba(0,0,0,0.7);padding:2rem;border:4px solid #d62828;max-width:900px;margin:2rem auto;border-radius:10px;}
-h1,h2,h3{text-align:center;color:#f7cd46;}
-footer{text-align:center;background:rgba(0,0,0,0.8);padding:1rem;color:#f7cd46;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;}
-.grid img{width:100%;border:3px solid #1a8e3e;border-radius:5px;}
-button{background:#1a8e3e;color:white;border:none;padding:10px 20px;border-radius:5px;}
-button:hover{background:#d62828;}
-/* Default grid thumbnails (safe size) */
+/* Base */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(to right, #d62828, #f7cd46, #1a8e3e);
+}
+
+/* Site title (LOCKED so it never disappears) */
+.site-title {
+  margin: 0 0 0.5rem 0;
+  font-family: 'Bungee', cursive;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #000;
+  text-shadow:
+    2px 2px 0 #f7cd46,
+    -2px 2px 0 #f7cd46,
+    2px -2px 0 #f7cd46,
+    -2px -2px 0 #f7cd46;
+}
+
+/* Nav */
+nav {
+  text-align: center;
+  background-color: rgba(0,0,0,0.8);
+  padding: 0.75rem;
+}
+
+nav a {
+  color: #f7cd46;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+}
+
+nav a:hover {
+  color: #ffffff;
+  text-shadow: 1px 1px 0 #000, 1px 1px 0 #f7cd46;
+}
+
+/* Main wrapper */
+main {
+  background-color: rgba(0,0,0,0.7);
+  padding: 2rem;
+  border: 4px solid #d62828;
+  max-width: 980px;
+  margin: 2rem auto;
+  border-radius: 10px;
+}
+
+/* Headings */
+h1, h2, h3 {
+  text-align: center;
+  color: #f7cd46;
+  margin-top: 0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background: rgba(0,0,0,0.8);
+  padding: 1rem;
+  color: #f7cd46;
+}
+
+/* =========================================================
+   DEFAULT GRID THUMBNAILS (SAFE SIZE)
+   - Used by band members grid + any .grid galleries
+   ========================================================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.grid a {
+  display: block;
+}
+
 .grid img {
   width: 160px;
   height: 160px;
@@ -26,4 +110,118 @@ button:hover{background:#d62828;}
 .grid img:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px rgba(244,180,0,0.6);
+}
+
+/* Buttons (if you use them anywhere) */
+button {
+  background: #1a8e3e;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover { background: #d62828; }
+
+/* =========================================================
+   HERO (Homepage) - optional (safe even if not used)
+   ========================================================= */
+.hero-inner{
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.hero-copy{
+  flex: 1 1 360px;
+}
+
+.hero-logo{
+  flex: 0 1 420px;
+  text-align: center;
+}
+
+.hero-logo img{
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.35))
+          drop-shadow(0 0 22px rgba(0, 150, 0, 0.25));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.hero-logo img:hover{
+  transform: scale(1.03);
+  filter: drop-shadow(0 0 18px rgba(255, 215, 0, 0.55))
+          drop-shadow(0 0 28px rgba(0, 150, 0, 0.4));
+}
+
+/* =========================================================
+   GALLERY PAGE LAYOUT (Band Members | Events)
+   ========================================================= */
+
+.gallery-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 40px;
+}
+
+/* Make sure gallery page wrapper doesn't break layout */
+.gallery-page {
+  width: 100%;
+}
+
+/* Band members thumbs (use the safe 160x160) */
+.band-members .grid img {
+  width: 160px;
+  height: 160px;
+}
+
+/* Events column */
+.events-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* Event card uses BACKGROUND IMAGE (not giant <img>) */
+.event-card {
+  display: block;
+  width: 100%;
+  max-width: 420px;     /* controls size so it won't overlap */
+  height: 240px;
+  margin: 0 auto;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-radius: 12px;
+  border: 2px solid #f5d547;
+  box-shadow: 0 0 18px rgba(245, 213, 71, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.event-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 28px rgba(245, 213, 71, 0.6);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .gallery-columns { grid-template-columns: 1fr; padding: 20px; }
+}
+
+@media (max-width: 768px) {
+  nav a { margin: 0 0.5rem; font-size: 0.95rem; }
+  main { margin: 1rem; padding: 1.25rem; }
+  .event-card { max-width: 100%; height: 200px; }
 }
