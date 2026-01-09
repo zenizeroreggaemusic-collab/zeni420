@@ -71,20 +71,20 @@ main p {
 
 /* ===== GRAFFITI FONT (HEADER + NAV) ===== */
 /* ===== TITLE (Option A) ===== */
+
 header h1 {
-  font-family: 'Rubik Spray Paint', cursive;
-  font-size: 3.4rem;
-  letter-spacing: 0.5px;
+  font-family: 'Bungee', cursive;
+  font-size: 3.2rem;
+  letter-spacing: 1px;
   color: #ffd84d;
 
-  /* strong readable outline */
+  /* clean, readable outline */
   text-shadow:
-  -2px -2px 0 #000,
-   2px -2px 0 #000,
-  -2px  2px 0 #000,
-   2px  2px 0 #000,
-   0px 3px 0 #000,
-   0px 6px 6px rgba(0,0,0,0.35);
+    -2px -2px 0 #000,
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000;
+}
 
 header nav a {
   font-family: 'Montserrat', sans-serif;
