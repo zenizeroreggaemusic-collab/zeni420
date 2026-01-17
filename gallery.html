@@ -24,36 +24,30 @@
 <main class="gallery-page">
   <h2>Gallery</h2>
 
-  <!-- Tabs -->
-  <div class="gallery-tabs">
-    <button class="tab-btn active" data-tab="band">Band</button>
-    <button class="tab-btn" data-tab="events">Events</button>
+  <!-- BAND MEMBERS -->
+  <h3>Band Members</h3>
+  <div class="grid">
+    <a class="gallery-link" href="images/logo.png"><img src="images/logo.png" alt="Zenizero Logo" class="gallery-img"></a>
+    <a class="gallery-link" href="images/derek.png"><img src="images/derek.png" alt="Derek" class="gallery-img"></a>
+    <a class="gallery-link" href="images/edxon.png"><img src="images/edxon.png" alt="Edxon" class="gallery-img"></a>
+    <a class="gallery-link" href="images/lui.png"><img src="images/lui.png" alt="Lui" class="gallery-img"></a>
+    <a class="gallery-link" href="images/elber.png"><img src="images/elber.png" alt="Elber" class="gallery-img"></a>
+    <a class="gallery-link" href="images/avery.png"><img src="images/avery.png" alt="Avery" class="gallery-img"></a>
+    <a class="gallery-link" href="images/mau.jpg"><img src="images/mau.jpg" alt="Mau" class="gallery-img"></a>
+    <a class="gallery-link" href="images/danny.jpg"><img src="images/danny.jpg" alt="Danny" class="gallery-img"></a>
+    <a class="gallery-link" href="images/kev.jpg"><img src="images/kev.jpg" alt="Kev" class="gallery-img"></a>
+    <a class="gallery-link" href="images/juanii.png"><img src="images/juanii.png" alt="Juanii" class="gallery-img"></a>
+    <a class="gallery-link" href="images/majahn.jpg"><img src="images/majahn.jpg" alt="Majahn" class="gallery-img"></a>
   </div>
 
-  <!-- BAND TAB -->
-  <section id="tab-band" class="tab-panel active">
-    <div class="grid">
-      <img src="images/logo.png" alt="Band Logo" class="gallery-img">
-      <img src="images/derek.png" alt="Derek" class="gallery-img">
-      <img src="images/edxon.png" alt="Edxon" class="gallery-img">
-      <img src="images/lui.png" alt="Lui" class="gallery-img">
-      <img src="images/elber.png" alt="Elber" class="gallery-img">
-      <img src="images/avery.png" alt="Avery" class="gallery-img">
-      <img src="images/mau.jpg" alt="Mau" class="gallery-img">
-      <img src="images/danny.jpg" alt="Danny" class="gallery-img">
-      <img src="images/kev.jpg" alt="Kev" class="gallery-img">
-      <img src="images/juanii.png" alt="Juanii" class="gallery-img">
-      <img src="images/majahn.jpg" alt="Majahn" class="gallery-img">
-    </div>
-  </section>
-
-  <!-- EVENTS TAB -->
-  <section id="tab-events" class="tab-panel">
-    <div class="grid">
-      <img src="images/event.png" alt="Event Poster" class="gallery-img">
-      <!-- add more event images here later -->
-    </div>
-  </section>
+  <!-- EVENTS -->
+  <h3 style="margin-top: 2rem;">Past / Upcoming Events</h3>
+  <div class="grid">
+    <a class="gallery-link" href="images/event.png"><img src="images/event.png" alt="Event Poster" class="gallery-img"></a>
+    <!-- Add more event images like this:
+    <a class="gallery-link" href="images/event2.png"><img src="images/event2.png" alt="Event Poster 2" class="gallery-img"></a>
+    -->
+  </div>
 
   <!-- Lightbox (fullscreen viewer) -->
   <div id="lightbox" class="lightbox" aria-hidden="true">
@@ -63,22 +57,37 @@
 </main>
 
 <script>
-  // Tabs
-  const tabButtons = document.querySelectorAll(".tab-btn");
-  const tabPanels = {
-    band: document.getElementById("tab-band"),
-    events: document.getElementById("tab-events"),
-  };
+  // Lightbox
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeBtn = document.querySelector(".lightbox-close");
 
-  tabButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      tabButtons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      Object.values(tabPanels).forEach(p => p.classList.remove("active"));
-      tabPanels[btn.dataset.tab].classList.add("active");
+  document.querySelectorAll(".gallery-link").forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const img = link.querySelector("img");
+      lightboxImg.src = link.getAttribute("href");
+      lightboxImg.alt = img.alt || "Gallery image";
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
     });
   });
+
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden", "true");
+    lightboxImg.src = "";
+  }
+
+  closeBtn.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLightbox();
+  });
+</script>
 
   // Lightbox
   const lightbox = document.getElementById("lightbox");
