@@ -49,51 +49,8 @@
     -->
   </div>
 
-  <!-- Lightbox (fullscreen viewer) -->
-  <div id="lightbox" class="lightbox" aria-hidden="true">
-    <button class="lightbox-close" aria-label="Close">&times;</button>
-    <img id="lightbox-img" alt="">
-  </div>
 </main>
 
-<script>
-  // Lightbox
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightbox-img");
-  const closeBtn = document.querySelector(".lightbox-close");
-
-  document.querySelectorAll(".gallery-link").forEach(link => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const img = link.querySelector("img");
-      lightboxImg.src = link.getAttribute("href");
-      lightboxImg.alt = img.alt || "Gallery image";
-      lightbox.classList.add("open");
-      lightbox.setAttribute("aria-hidden", "false");
-    });
-  });
-
-  function closeLightbox() {
-    lightbox.classList.remove("open");
-    lightbox.setAttribute("aria-hidden", "true");
-    lightboxImg.src = "";
-  }
-
-  closeBtn.addEventListener("click", closeLightbox);
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeLightbox();
-  });
-</script>
-
-  
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeLightbox();
-  });
-</script>
 
       </div>
     </section>
