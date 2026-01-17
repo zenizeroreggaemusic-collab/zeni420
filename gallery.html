@@ -22,51 +22,102 @@
 </header>
 
 <main class="gallery-page">
+  <h2>Gallery</h2>
 
-  <div class="gallery-columns">
+  <!-- Tabs -->
+  <div class="gallery-tabs">
+    <button class="tab-btn active" data-tab="band">Band</button>
+    <button class="tab-btn" data-tab="events">Events</button>
+  </div>
 
-    <!-- LEFT COLUMN: BAND MEMBERS -->
-    <section class="band-members">
-      <h3>Band Members</h3>
+  <!-- BAND TAB -->
+  <section id="tab-band" class="tab-panel active">
+    <div class="ig-grid">
+      <img src="images/logo.png" alt="Band Logo" class="gallery-img">
+      <img src="images/derek.png" alt="Derek" class="gallery-img">
+      <img src="images/edxon.png" alt="Edxon" class="gallery-img">
+      <img src="images/lui.png" alt="Lui" class="gallery-img">
+      <img src="images/elber.png" alt="Elber" class="gallery-img">
+      <img src="images/avery.png" alt="Avery" class="gallery-img">
+      <img src="images/mau.jpg" alt="Mau" class="gallery-img">
+      <img src="images/danny.jpg" alt="Danny" class="gallery-img">
+      <img src="images/kev.jpg" alt="Kev" class="gallery-img">
+      <img src="images/juanii.png" alt="Juanii" class="gallery-img">
+      <img src="images/majahn.jpg" alt="Majahn" class="gallery-img">
+    </div>
+  </section>
 
-      <div class="grid">
-  <img src="images/logo.png" alt="Band Logo">
-  <img src="images/derek.png" alt="Derek">
-  <img src="images/edxon.png" alt="Edxon">
-  <img src="images/lui.png" alt="Lui">
-  <img src="images/elber.png" alt="Elber">
-  <img src="images/avery.png" alt="Avery">
-  <img src="images/mau.jpg" alt="Mau">
-  <img src="images/danny.jpg" alt="Danny">
-  <img src="images/kev.jpg" alt="Kev">
-  <img src="images/juanii.png" alt="Juanii">
-  <img src="images/majahn.jpg" alt="Majahn">
-  <img src="images/event.png" alt="Event Poster">
-</div>
-    </section>
+  <!-- EVENTS TAB -->
+  <section id="tab-events" class="tab-panel">
+    <div class="ig-grid">
+      <img src="images/event.png" alt="Event Poster" class="gallery-img">
+      <!-- add more event images here later -->
+    </div>
+  </section>
 
-    <!-- RIGHT COLUMN: EVENTS -->
-    <section class="events">
-      <h3>Events</h3>
+  <!-- Lightbox (fullscreen viewer) -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <img id="lightbox-img" alt="">
+  </div>
+</main>
 
-      <div class="events-grid">
-        <!-- Caribbean Fuego event -->
-        <a
-  href="images/event.png"
-  target="_blank"
-  class="event-card"
-  style="background-image: url('images/event.png');">
-</a>
+<script>
+  // Tabs
+  const tabButtons = document.querySelectorAll(".tab-btn");
+  const tabPanels = {
+    band: document.getElementById("tab-band"),
+    events: document.getElementById("tab-events"),
+  };
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      tabButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      Object.values(tabPanels).forEach(p => p.classList.remove("active"));
+      tabPanels[btn.dataset.tab].classList.add("active");
+    });
+  });
+
+  // Lightbox
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  const closeBtn = document.querySelector(".lightbox-close");
+
+  document.querySelectorAll(".gallery-img").forEach(img => {
+    img.addEventListener("click", () => {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt || "Gallery image";
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden", "true");
+    lightboxImg.src = "";
+  }
+
+  closeBtn.addEventListener("click", closeLightbox);
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLightbox();
+  });
+</script>
+
       </div>
     </section>
-
-  </div>
+    </div>
 
 </main>
 
 <footer>
   ©2025 Zenizero Reggae Music — Roots • Culture • Unity
 </footer>
-
 </body>
 </html>
