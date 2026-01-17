@@ -244,3 +244,46 @@ button:hover { background: #d62828; }
 .social-links a:hover {
   color: #5fd547;
 }
+
+/* ===============================
+   SOCIAL MEDIA DROPDOWN
+================================ */
+
+.social-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.social-trigger {
+  cursor: pointer;
+  font-weight: bold;
+  color: #f5d547;
+}
+
+.social-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #111;
+  border: 2px solid #f5d547;
+  border-radius: 6px;
+  min-width: 160px;
+  z-index: 1000;
+}
+
+.social-menu a {
+  display: block;
+  padding: 10px 14px;
+  color: #f5d547;
+  text-decoration: none;
+}
+
+.social-menu a:hover {
+  background: #f5d547;
+  color: #111;
+}
+
+.social-dropdown:hover .social-menu {
+  display: block;
+}
